@@ -1,16 +1,7 @@
-import React from "react";
-import Clock from "./Components/Clock";
-import ClockList from "./Components/ClockList";
-import Form from "./Components/Form";
+import Calculator from "./Components/Calculator";
 
-class App extends React.Component {
-  render() {
-    const quantities = [1, 2, 3];
-    return (
-      <>
-        <Form />
-      </>
-    );
-  }
+function App() {
+  return <Calculator />;
 }
+
 export default App;
