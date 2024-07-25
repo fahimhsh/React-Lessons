@@ -1,13 +1,12 @@
-import ChildComp from "./Components/Inheritance/inherit";
-import Layout from "./Components/Composition/compose";
+import ClickCounter from "./Components/ClickCounter";
+import HoverCounter from "./Components/HoverCounter";
 
 function App() {
   return (
-    <div>
-      <Layout>
-        <p>I'm the f*cking main content</p>
-      </Layout>
-    </div>
+    <>
+      <ClickCounter />
+      <HoverCounter />
+    </>
   );
 }
 
