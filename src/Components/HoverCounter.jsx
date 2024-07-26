@@ -1,7 +1,4 @@
-import withCounter from "./HOC/withCounter";
-
-const HoverCounter = (props) => {
-  const { count, handler } = props;
+const ClickCounter = ({ count, handler }) => {
   return (
     <div>
       <h1 onMouseOver={handler}>Hovered {count} times</h1>
@@ -9,4 +6,4 @@ const HoverCounter = (props) => {
   );
 };
 
-export default withCounter(HoverCounter);
+export default ClickCounter;
