@@ -2,14 +2,26 @@ import React from "react";
 import ClickCounter from "./Components/ClickCounter";
 import Counter from "./Components/Counter";
 import Section from "./Components/Section";
-import ThemeContext from "./Components/Contexts/themeContext";
+import ThemeContext from "./Contexts/themeContext";
 
 export default class App extends React.Component {
     state = {
         theme: "dark",
+        switchTheme: () => {
+            this.setState((prevState) => {
+                if (prevState.theme === "dark") {
+                    return {
+                        theme: "light",
+                    };
+                } else {
+                    return {
+                        theme: "dark",
+                    };
+                }
+            });
+        },
     };
     render() {
-        const { theme } = this.state;
         return (
             <>
                 <Counter>
@@ -17,7 +29,7 @@ export default class App extends React.Component {
                         <ClickCounter count={count} handler={handler} />
                     )}
                 </Counter>
-                <ThemeContext.Provider value={{ theme: theme }}>
+                <ThemeContext.Provider value={this.state}>
                     <Section />
                 </ThemeContext.Provider>
             </>
